@@ -38,6 +38,7 @@ public abstract class Actor {
     protected abstract void work(Object message);
 
     protected void handleException(Exception e) {
+        e.printStackTrace();
     }
 
     public void receive(Object message) {
