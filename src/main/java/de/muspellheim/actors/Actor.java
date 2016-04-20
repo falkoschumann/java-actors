@@ -7,7 +7,7 @@ import java.util.concurrent.LinkedBlockingQueue;
 
 public abstract class Actor {
 
-    public final Event<Object> event = new Event<>();
+    public final Event<Object> messages = new Event<>();
 
     private final BlockingQueue<Object> inbox = new LinkedBlockingQueue<>();
 
@@ -38,6 +38,7 @@ public abstract class Actor {
     protected abstract void work(Object message);
 
     protected void handleException(Exception e) {
+        e.printStackTrace();
     }
 
     public void receive(Object message) {

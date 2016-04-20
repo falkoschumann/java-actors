@@ -1,14 +1,14 @@
 package de.muspellheim.actors.example;
 
 import de.muspellheim.actors.example.actors.AlarmbellActor;
-import de.muspellheim.actors.example.actors.DlgActor;
+import de.muspellheim.actors.example.actors.SwtDlgActor;
 import de.muspellheim.actors.example.actors.WatchdogActor;
 import de.muspellheim.actors.example.actors.messages.CurrentTimeEvent;
 import de.muspellheim.actors.example.portals.Clock;
-import de.muspellheim.actors.example.portals.DlgAlarmclock;
+import de.muspellheim.actors.example.portals.SwtDlgAlarmclock;
 import de.muspellheim.actors.example.providers.Alarmbell;
 
-public class Program {
+public class SwtProgram {
 
     public static void main(String args[]) {
         Thread.setDefaultUncaughtExceptionHandler((t, e) -> e.printStackTrace());
@@ -16,15 +16,15 @@ public class Program {
         Alarmbell bell = new Alarmbell();
         Clock clock = new Clock();
         Watchdog dog = new Watchdog();
-        DlgAlarmclock dlg = new DlgAlarmclock();
+        SwtDlgAlarmclock dlg = new SwtDlgAlarmclock();
 
         AlarmbellActor bellActor = new AlarmbellActor(bell);
         WatchdogActor dogActor = new WatchdogActor(dog);
-        DlgActor dlgActor = new DlgActor(dlg);
+        SwtDlgActor dlgActor = new SwtDlgActor(dlg);
 
-        dlgActor.event.addHandler(e -> dogActor.receive(e));
-        dogActor.event.addHandler(e -> dlgActor.receive(e));
-        dogActor.event.addHandler(e -> bellActor.receive(e));
+        dlgActor.messages.addHandler(e -> dogActor.receive(e));
+        dogActor.messages.addHandler(e -> dlgActor.receive(e));
+        dogActor.messages.addHandler(e -> bellActor.receive(e));
 
         clock.onCurrentTime.addHandler(t -> {
             CurrentTimeEvent e = new CurrentTimeEvent();
@@ -32,6 +32,8 @@ public class Program {
             dlgActor.receive(e);
             dogActor.receive(e);
         });
+
+        dlg.open();
     }
 
 }
