@@ -22,9 +22,9 @@ public class SwingProgram {
         WatchdogActor dogActor = new WatchdogActor(dog);
         SwingDlgActor dlgActor = new SwingDlgActor(dlg);
 
-        dlgActor.event.addHandler(e -> dogActor.receive(e));
-        dogActor.event.addHandler(e -> dlgActor.receive(e));
-        dogActor.event.addHandler(e -> bellActor.receive(e));
+        dlgActor.messages.addHandler(e -> dogActor.receive(e));
+        dogActor.messages.addHandler(e -> dlgActor.receive(e));
+        dogActor.messages.addHandler(e -> bellActor.receive(e));
 
         clock.onCurrentTime.addHandler(t -> {
             CurrentTimeEvent e = new CurrentTimeEvent();

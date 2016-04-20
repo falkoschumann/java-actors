@@ -7,7 +7,7 @@ import java.util.concurrent.LinkedBlockingQueue;
 
 public abstract class Actor {
 
-    public final Event<Object> event = new Event<>();
+    public final Event<Object> messages = new Event<>();
 
     private final BlockingQueue<Object> inbox = new LinkedBlockingQueue<>();
 

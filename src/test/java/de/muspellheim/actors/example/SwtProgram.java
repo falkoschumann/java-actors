@@ -22,9 +22,9 @@ public class SwtProgram {
         WatchdogActor dogActor = new WatchdogActor(dog);
         SwtDlgActor dlgActor = new SwtDlgActor(dlg);
 
-        dlgActor.event.addHandler(e -> dogActor.receive(e));
-        dogActor.event.addHandler(e -> dlgActor.receive(e));
-        dogActor.event.addHandler(e -> bellActor.receive(e));
+        dlgActor.messages.addHandler(e -> dogActor.receive(e));
+        dogActor.messages.addHandler(e -> dlgActor.receive(e));
+        dogActor.messages.addHandler(e -> bellActor.receive(e));
 
         clock.onCurrentTime.addHandler(t -> {
             CurrentTimeEvent e = new CurrentTimeEvent();
@@ -32,6 +32,8 @@ public class SwtProgram {
             dlgActor.receive(e);
             dogActor.receive(e);
         });
+
+        dlg.open();
     }
 
 }

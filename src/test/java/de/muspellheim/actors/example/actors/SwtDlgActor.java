@@ -14,11 +14,11 @@ public class SwtDlgActor extends SwtActor {
         dlg.onStartRequested.addHandler(t -> {
             StartCommand e = new StartCommand();
             e.wakeupTime = t;
-            event.send(e);
+            messages.send(e);
         });
         dlg.onStopRequested.addHandler(v -> {
             StopCommand e = new StopCommand();
-            event.send(e);
+            messages.send(e);
         });
     }
 

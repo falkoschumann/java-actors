@@ -15,11 +15,11 @@ public class WatchdogActor extends Actor {
         dog.onRemainingTime.addHandler(d -> {
             RemainingTimeEvent e = new RemainingTimeEvent();
             e.remainingTime = d;
-            event.send(e);
+            messages.send(e);
         });
         dog.onWakeuptimeDiscovered.addHandler(v -> {
             WakeupTimeDiscoveredEvent e = new WakeupTimeDiscoveredEvent();
-            event.send(e);
+            messages.send(e);
         });
     }
 

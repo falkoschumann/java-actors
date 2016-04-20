@@ -1,10 +1,10 @@
 package de.muspellheim.actors.example.portals;
 
 import de.muspellheim.events.Event;
+import org.eclipse.swt.events.SelectionEvent;
+import org.eclipse.swt.events.ShellEvent;
+import org.eclipse.swt.widgets.Button;
 
-import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.WindowEvent;
 import java.time.Duration;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
@@ -19,8 +19,8 @@ public class SwtDlgAlarmclock extends SwtDlgAlarmclockForm {
         initializeComponent();
     }
 
-    protected void tbSwitchAlarmOnOffClicked(ActionEvent e) {
-        JToggleButton tb = (JToggleButton) e.getSource();
+    protected void tbSwitchAlarmOnOffClicked(SelectionEvent e) {
+        Button tb = (Button) e.getSource();
         if (tb.getText().endsWith("Off")) {
             tb.setText("On");
             if (!lblRemainingTime.isVisible()) {
@@ -36,7 +36,7 @@ public class SwtDlgAlarmclock extends SwtDlgAlarmclockForm {
         }
     }
 
-    protected void dlgAlarmclockFormClosed(WindowEvent e) {
+    protected void dlgAlarmclockFormClosed(ShellEvent e) {
         onStopRequested.send(null);
     }
 
@@ -54,7 +54,7 @@ public class SwtDlgAlarmclock extends SwtDlgAlarmclockForm {
 
     public void wakeupTimeReached() {
         lblRemainingTime.setVisible(false);
-        tbSwitchAlarmOnOff.setSelected(false);
+        tbSwitchAlarmOnOff.setSelection(false);
     }
 
 }

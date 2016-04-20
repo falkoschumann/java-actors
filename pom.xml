@@ -24,6 +24,7 @@
             <groupId>org.eclipse</groupId>
             <artifactId>jface</artifactId>
             <version>3.3.0-I20070606-0010</version>
+            <scope>test</scope>
             <optional>true</optional>
         </dependency>
         <dependency>
