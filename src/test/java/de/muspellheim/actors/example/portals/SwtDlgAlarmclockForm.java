@@ -12,11 +12,11 @@ import org.eclipse.swt.widgets.*;
 
 public abstract class SwtDlgAlarmclockForm {
 
-    protected Label lblCurrentTime;
-    protected Label lblRemainingTime;
-    protected Label lblWakeupTime;
-    protected Text txtWakeupTime;
-    protected Button tbSwitchAlarmOnOff;
+    protected Label currentTimeLabel;
+    protected Label remainingTimeLabel;
+    protected Label wakeupTimeLabel;
+    protected Text wakeupTimeText;
+    protected Button switchAlarmOnOffButton;
 
     private Display display;
     private Shell shell;
@@ -39,27 +39,27 @@ public abstract class SwtDlgAlarmclockForm {
         Composite container = new Composite(shell, SWT.NONE);
         container.setLayout(new GridLayout(3, true));
 
-        lblCurrentTime = new Label(container, SWT.NONE);
-        lblCurrentTime.setText("17:26:34");
-        GridDataFactory.swtDefaults().align(SWT.CENTER, SWT.CENTER).span(3, 1).applyTo(lblCurrentTime);
+        currentTimeLabel = new Label(container, SWT.NONE);
+        currentTimeLabel.setText("17:26:34");
+        GridDataFactory.swtDefaults().align(SWT.CENTER, SWT.CENTER).span(3, 1).applyTo(currentTimeLabel);
 
-        lblRemainingTime = new Label(container, SWT.NONE);
-        lblRemainingTime.setText("00:33:26");
-        lblRemainingTime.setForeground(container.getDisplay().getSystemColor(SWT.COLOR_RED));
-        lblRemainingTime.setVisible(false);
-        GridDataFactory.swtDefaults().align(SWT.CENTER, SWT.CENTER).span(3, 1).applyTo(lblRemainingTime);
+        remainingTimeLabel = new Label(container, SWT.NONE);
+        remainingTimeLabel.setText("00:33:26");
+        remainingTimeLabel.setForeground(container.getDisplay().getSystemColor(SWT.COLOR_RED));
+        remainingTimeLabel.setVisible(false);
+        GridDataFactory.swtDefaults().align(SWT.CENTER, SWT.CENTER).span(3, 1).applyTo(remainingTimeLabel);
 
-        lblWakeupTime = new Label(container, SWT.NONE);
-        lblWakeupTime.setText("Wakeup time:");
-        GridDataFactory.swtDefaults().align(SWT.RIGHT, SWT.CENTER).applyTo(lblWakeupTime);
+        wakeupTimeLabel = new Label(container, SWT.NONE);
+        wakeupTimeLabel.setText("Wakeup time:");
+        GridDataFactory.swtDefaults().align(SWT.RIGHT, SWT.CENTER).applyTo(wakeupTimeLabel);
 
-        txtWakeupTime = new Text(container, SWT.BORDER);
-        txtWakeupTime.setText("18:00");
-        GridDataFactory.swtDefaults().align(SWT.FILL, SWT.CENTER).grab(true, false).applyTo(txtWakeupTime);
+        wakeupTimeText = new Text(container, SWT.BORDER);
+        wakeupTimeText.setText("18:00");
+        GridDataFactory.swtDefaults().align(SWT.FILL, SWT.CENTER).grab(true, false).applyTo(wakeupTimeText);
 
-        tbSwitchAlarmOnOff = new Button(container, SWT.TOGGLE);
-        tbSwitchAlarmOnOff.setText("Off");
-        tbSwitchAlarmOnOff.addSelectionListener(new SelectionAdapter() {
+        switchAlarmOnOffButton = new Button(container, SWT.TOGGLE);
+        switchAlarmOnOffButton.setText("Off");
+        switchAlarmOnOffButton.addSelectionListener(new SelectionAdapter() {
 
             @Override
             public void widgetSelected(SelectionEvent e) {
@@ -67,7 +67,7 @@ public abstract class SwtDlgAlarmclockForm {
             }
 
         });
-        GridDataFactory.swtDefaults().align(SWT.LEFT, SWT.CENTER).applyTo(tbSwitchAlarmOnOff);
+        GridDataFactory.swtDefaults().align(SWT.LEFT, SWT.CENTER).applyTo(switchAlarmOnOffButton);
     }
 
     public void open() {

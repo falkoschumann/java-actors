@@ -23,15 +23,15 @@ public class SwingDlgAlarmclock extends SwingDlgAlarmclockForm {
         JToggleButton tb = (JToggleButton) e.getSource();
         if (tb.getText().endsWith("Off")) {
             tb.setText("On");
-            if (!lblRemainingTime.isVisible()) {
-                lblRemainingTime.setVisible(true);
-                lblRemainingTime.setText("");
+            if (!remainingTimeLabel.isVisible()) {
+                remainingTimeLabel.setVisible(true);
+                remainingTimeLabel.setText("");
 
-                onStartRequested.send(LocalTime.parse(txtWakeupTime.getText()));
+                onStartRequested.send(LocalTime.parse(wakeupTimeText.getText()));
             }
         } else {
             tb.setText("Off");
-            lblRemainingTime.setVisible(false);
+            remainingTimeLabel.setVisible(false);
             onStopRequested.send(null);
         }
     }
@@ -41,7 +41,7 @@ public class SwingDlgAlarmclock extends SwingDlgAlarmclockForm {
     }
 
     public void updateCurrentTime(LocalTime currentTime) {
-        lblCurrentTime.setText(currentTime.format(DateTimeFormatter.ofLocalizedTime(FormatStyle.MEDIUM)));
+        currentTimeLabel.setText(currentTime.format(DateTimeFormatter.ofLocalizedTime(FormatStyle.MEDIUM)));
     }
 
     public void updateRemainingTime(Duration remainingTime) {
@@ -49,12 +49,12 @@ public class SwingDlgAlarmclock extends SwingDlgAlarmclockForm {
         long minutes = remainingTime.getSeconds() / 60 - hours * 60;
         long seconds = remainingTime.getSeconds() - hours * 60 * 60 - minutes * 60;
 
-        lblRemainingTime.setText(String.format("%1$02d:%2$02d:%3$02d", hours, minutes, seconds));
+        remainingTimeLabel.setText(String.format("%1$02d:%2$02d:%3$02d", hours, minutes, seconds));
     }
 
     public void wakeupTimeReached() {
-        lblRemainingTime.setVisible(false);
-        tbSwitchAlarmOnOff.setSelected(false);
+        remainingTimeLabel.setVisible(false);
+        switchAlarmOnOffButton.setSelected(false);
     }
 
 }
