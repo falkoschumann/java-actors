@@ -6,13 +6,13 @@ import java.awt.event.ActionEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
-public abstract class SwingDlgAlarmclockForm extends JFrame {
+public abstract class SwingAlarmclockDialogForm extends JFrame {
 
-    protected JLabel lblCurrentTime;
-    protected JLabel lblRemainingTime;
-    protected JLabel lblWakeupTime;
-    protected JTextField txtWakeupTime;
-    protected JToggleButton tbSwitchAlarmOnOff;
+    protected JLabel currentTimeLabel;
+    protected JLabel remainingTimeLabel;
+    protected JLabel wakeupTimeLabel;
+    protected JTextField wakeupTimeText;
+    protected JToggleButton switchAlarmOnOffButton;
 
     public void initializeComponent() {
         setTitle("Alarm Clock");
@@ -31,43 +31,43 @@ public abstract class SwingDlgAlarmclockForm extends JFrame {
         container.setLayout(new GridBagLayout());
         getContentPane().add(container);
 
-        lblCurrentTime = new JLabel("17:26:34");
+        currentTimeLabel = new JLabel("17:26:34");
         GridBagConstraints constraints = new GridBagConstraints();
         constraints.gridx = 1;
         constraints.gridy = 0;
         constraints.anchor = GridBagConstraints.CENTER;
-        container.add(lblCurrentTime, constraints);
+        container.add(currentTimeLabel, constraints);
 
-        lblRemainingTime = new JLabel("00:33:26");
-        lblRemainingTime.setForeground(Color.RED);
-        lblRemainingTime.setVisible(false);
+        remainingTimeLabel = new JLabel("00:33:26");
+        remainingTimeLabel.setForeground(Color.RED);
+        remainingTimeLabel.setVisible(false);
         constraints = new GridBagConstraints();
         constraints.gridx = 1;
         constraints.gridy = 1;
         constraints.anchor = GridBagConstraints.CENTER;
-        container.add(lblRemainingTime, constraints);
+        container.add(remainingTimeLabel, constraints);
 
-        lblWakeupTime = new JLabel("Wakeup time:");
+        wakeupTimeLabel = new JLabel("Wakeup time:");
         constraints = new GridBagConstraints();
         constraints.gridx = 0;
         constraints.gridy = 2;
         constraints.anchor = GridBagConstraints.LINE_END;
-        container.add(lblWakeupTime, constraints);
+        container.add(wakeupTimeLabel, constraints);
 
-        txtWakeupTime = new JTextField("18:00");
+        wakeupTimeText = new JTextField("18:00");
         constraints = new GridBagConstraints();
         constraints.gridx = 1;
         constraints.gridy = 2;
         constraints.fill = GridBagConstraints.HORIZONTAL;
-        container.add(txtWakeupTime, constraints);
+        container.add(wakeupTimeText, constraints);
 
-        tbSwitchAlarmOnOff = new JToggleButton("Off");
-        tbSwitchAlarmOnOff.addActionListener(e -> tbSwitchAlarmOnOffClicked(e));
+        switchAlarmOnOffButton = new JToggleButton("Off");
+        switchAlarmOnOffButton.addActionListener(e -> tbSwitchAlarmOnOffClicked(e));
         constraints = new GridBagConstraints();
         constraints.gridx = 2;
         constraints.gridy = 2;
         constraints.anchor = GridBagConstraints.LINE_START;
-        container.add(tbSwitchAlarmOnOff, constraints);
+        container.add(switchAlarmOnOffButton, constraints);
 
         setVisible(true);
     }

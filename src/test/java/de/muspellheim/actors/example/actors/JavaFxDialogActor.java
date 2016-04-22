@@ -1,14 +1,14 @@
 package de.muspellheim.actors.example.actors;
 
-import de.muspellheim.actors.SwingActor;
+import de.muspellheim.actors.JavaFxActor;
 import de.muspellheim.actors.example.actors.messages.*;
-import de.muspellheim.actors.example.portals.SwingDlgAlarmclock;
+import de.muspellheim.actors.example.portals.JavaFxAlarmclockDialog;
 
-public class SwingDlgActor extends SwingActor {
+public class JavaFxDialogActor extends JavaFxActor {
 
-    private SwingDlgAlarmclock dlg;
+    private JavaFxAlarmclockDialog dlg;
 
-    public SwingDlgActor(SwingDlgAlarmclock dlg) {
+    public JavaFxDialogActor(JavaFxAlarmclockDialog dlg) {
         this.dlg = dlg;
 
         dlg.onStartRequested.addHandler(t -> {
