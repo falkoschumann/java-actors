@@ -6,7 +6,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
-public abstract class SwingDlgAlarmclockForm extends JFrame {
+public abstract class SwingAlarmclockDialogForm extends JFrame {
 
     protected JLabel currentTimeLabel;
     protected JLabel remainingTimeLabel;

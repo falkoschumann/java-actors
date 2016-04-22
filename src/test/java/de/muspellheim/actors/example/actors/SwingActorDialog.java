@@ -2,13 +2,13 @@ package de.muspellheim.actors.example.actors;
 
 import de.muspellheim.actors.SwingActor;
 import de.muspellheim.actors.example.actors.messages.*;
-import de.muspellheim.actors.example.portals.SwingDlgAlarmclock;
+import de.muspellheim.actors.example.portals.SwingAlarmclockDialog;
 
-public class SwingDlgActor extends SwingActor {
+public class SwingActorDialog extends SwingActor {
 
-    private SwingDlgAlarmclock dlg;
+    private SwingAlarmclockDialog dlg;
 
-    public SwingDlgActor(SwingDlgAlarmclock dlg) {
+    public SwingActorDialog(SwingAlarmclockDialog dlg) {
         this.dlg = dlg;
 
         dlg.onStartRequested.addHandler(t -> {

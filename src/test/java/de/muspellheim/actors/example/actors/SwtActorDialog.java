@@ -2,13 +2,13 @@ package de.muspellheim.actors.example.actors;
 
 import de.muspellheim.actors.SwtActor;
 import de.muspellheim.actors.example.actors.messages.*;
-import de.muspellheim.actors.example.portals.SwtDlgAlarmclock;
+import de.muspellheim.actors.example.portals.SwtAlarmclockDialog;
 
-public class SwtDlgActor extends SwtActor {
+public class SwtActorDialog extends SwtActor {
 
-    private SwtDlgAlarmclock dlg;
+    private SwtAlarmclockDialog dlg;
 
-    public SwtDlgActor(SwtDlgAlarmclock dlg) {
+    public SwtActorDialog(SwtAlarmclockDialog dlg) {
         this.dlg = dlg;
 
         dlg.onStartRequested.addHandler(t -> {

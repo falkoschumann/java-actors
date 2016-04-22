@@ -10,7 +10,7 @@ import org.eclipse.swt.layout.FillLayout;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.*;
 
-public abstract class SwtDlgAlarmclockForm {
+public abstract class SwtAlarmclockDialogForm {
 
     protected Label currentTimeLabel;
     protected Label remainingTimeLabel;

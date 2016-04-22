@@ -10,12 +10,12 @@ import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.FormatStyle;
 
-public class SwtDlgAlarmclock extends SwtDlgAlarmclockForm {
+public class SwtAlarmclockDialog extends SwtAlarmclockDialogForm {
 
     public final Event<LocalTime> onStartRequested = new Event<>();
     public final Event<Void> onStopRequested = new Event<>();
 
-    public SwtDlgAlarmclock() {
+    public SwtAlarmclockDialog() {
         initializeComponent();
     }
 
