@@ -7,13 +7,14 @@ import de.muspellheim.actors.example.actors.messages.CurrentTimeEvent;
 import de.muspellheim.actors.example.portals.Clock;
 import de.muspellheim.actors.example.portals.SwtAlarmclockDialog;
 import de.muspellheim.actors.example.providers.Alarmbell;
+import de.muspellheim.actors.example.providers.DefaultAlarmbell;
 
 public class SwtProgram {
 
     public static void main(String args[]) {
         Thread.setDefaultUncaughtExceptionHandler((t, e) -> e.printStackTrace());
 
-        Alarmbell bell = new Alarmbell();
+        Alarmbell bell = new DefaultAlarmbell();
         Clock clock = new Clock();
         Watchdog dog = new Watchdog();
         SwtAlarmclockDialog dlg = new SwtAlarmclockDialog();

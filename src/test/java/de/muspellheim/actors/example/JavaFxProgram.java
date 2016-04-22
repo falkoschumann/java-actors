@@ -7,6 +7,7 @@ import de.muspellheim.actors.example.actors.messages.CurrentTimeEvent;
 import de.muspellheim.actors.example.portals.Clock;
 import de.muspellheim.actors.example.portals.JavaFxAlarmclockDialog;
 import de.muspellheim.actors.example.providers.Alarmbell;
+import de.muspellheim.actors.example.providers.JavaFxAlarmbell;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -25,7 +26,7 @@ public class JavaFxProgram extends Application {
     public void init() throws Exception {
         Thread.setDefaultUncaughtExceptionHandler((t, e) -> e.printStackTrace());
 
-        Alarmbell bell = new Alarmbell();
+        Alarmbell bell = new JavaFxAlarmbell();
         Clock clock = new Clock();
         Watchdog dog = new Watchdog();
         dialog = new JavaFxAlarmclockDialog();
