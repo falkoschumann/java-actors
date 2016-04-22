@@ -7,13 +7,14 @@ import de.muspellheim.actors.example.actors.messages.CurrentTimeEvent;
 import de.muspellheim.actors.example.portals.Clock;
 import de.muspellheim.actors.example.portals.SwingAlarmclockDialog;
 import de.muspellheim.actors.example.providers.Alarmbell;
+import de.muspellheim.actors.example.providers.DefaultAlarmbell;
 
 public class SwingProgram {
 
     public static void main(String args[]) {
         Thread.setDefaultUncaughtExceptionHandler((t, e) -> e.printStackTrace());
 
-        Alarmbell bell = new Alarmbell();
+        Alarmbell bell = new DefaultAlarmbell();
         Clock clock = new Clock();
         Watchdog dog = new Watchdog();
         SwingAlarmclockDialog dlg = new SwingAlarmclockDialog();
