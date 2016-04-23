@@ -1,3 +1,8 @@
+/*
+ * Copyright (c) 2016 Falko Schumann <www.muspellheim.de>
+ * Released under the terms of the MIT License.
+ */
+
 package de.muspellheim.actors.example;
 
 import de.muspellheim.actors.example.actors.AlarmbellActor;
@@ -35,9 +40,9 @@ public class JavaFxProgram extends Application {
         WatchdogActor dogActor = new WatchdogActor(dog);
         JavaFxDialogActor dlgActor = new JavaFxDialogActor(dialog);
 
-        dlgActor.messages.addHandler(e -> dogActor.receive(e));
-        dogActor.messages.addHandler(e -> dlgActor.receive(e));
-        dogActor.messages.addHandler(e -> bellActor.receive(e));
+        dlgActor.outbox.addHandler(e -> dogActor.receive(e));
+        dogActor.outbox.addHandler(e -> dlgActor.receive(e));
+        dogActor.outbox.addHandler(e -> bellActor.receive(e));
 
         clock.onCurrentTime.addHandler(t -> {
             CurrentTimeEvent e = new CurrentTimeEvent();

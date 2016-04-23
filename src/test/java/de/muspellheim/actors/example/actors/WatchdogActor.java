@@ -1,3 +1,8 @@
+/*
+ * Copyright (c) 2016 Falko Schumann <www.muspellheim.de>
+ * Released under the terms of the MIT License.
+ */
+
 package de.muspellheim.actors.example.actors;
 
 import de.muspellheim.actors.Actor;
@@ -15,11 +20,11 @@ public class WatchdogActor extends Actor {
         dog.onRemainingTime.addHandler(d -> {
             RemainingTimeEvent e = new RemainingTimeEvent();
             e.remainingTime = d;
-            messages.send(e);
+            outbox.send(e);
         });
         dog.onWakeuptimeDiscovered.addHandler(v -> {
             WakeupTimeDiscoveredEvent e = new WakeupTimeDiscoveredEvent();
-            messages.send(e);
+            outbox.send(e);
         });
     }
 

@@ -1,3 +1,8 @@
+/*
+ * Copyright (c) 2016 Falko Schumann <www.muspellheim.de>
+ * Released under the terms of the MIT License.
+ */
+
 package de.muspellheim.actors.example.actors;
 
 import de.muspellheim.actors.SwingActor;
@@ -14,11 +19,11 @@ public class SwingActorDialog extends SwingActor {
         dlg.onStartRequested.addHandler(t -> {
             StartCommand e = new StartCommand();
             e.wakeupTime = t;
-            messages.send(e);
+            outbox.send(e);
         });
         dlg.onStopRequested.addHandler(v -> {
             StopCommand e = new StopCommand();
-            messages.send(e);
+            outbox.send(e);
         });
     }
 
