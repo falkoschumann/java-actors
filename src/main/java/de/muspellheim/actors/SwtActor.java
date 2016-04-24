@@ -7,6 +7,11 @@ package de.muspellheim.actors;
 
 import org.eclipse.swt.widgets.Display;
 
+/**
+ * This actor process all messages in the SWT UI thread.
+ *
+ * @author Falko Schumann &lt;falko.schumann@muspellheim.de&gt;
+ */
 public abstract class SwtActor extends Actor {
 
     @Override
