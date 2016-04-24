@@ -10,6 +10,7 @@
 
     <name>Actors</name>
     <description>A simple actor model implementation.</description>
+    <url>https://github.com/falkoschumann/java-actors</url>
 
     <licenses>
         <license>
@@ -17,6 +18,19 @@
             <url>https://opensource.org/licenses/MIT</url>
         </license>
     </licenses>
+
+    <developers>
+        <developer>
+            <name>Falko Schumann</name>
+            <email>falko.schumann@muspellheim.de</email>
+        </developer>
+    </developers>
+
+    <scm>
+        <connection>scm:git:git@github.com:falkoschumann/java-actors.git</connection>
+        <developerConnection>scm:git:git@github.com:falkoschumann/java-actors.git</developerConnection>
+        <url>git@github.com:falkoschumann/java-actors.git</url>
+    </scm>
 
     <dependencies>
         <dependency>
@@ -60,14 +74,44 @@
         <plugins>
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.3</version>
+                <version>RELEASE</version>
                 <configuration>
                     <source>${java.source.level}</source>
                     <target>${java.source.level}</target>
                 </configuration>
             </plugin>
+            <plugin>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>RELEASE</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>RELEASE</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
+
+    <distributionManagement>
+        <repository>
+            <id>bintray-falkoschumann-maven</id>
+            <name>falkoschumann-maven</name>
+            <url>https://api.bintray.com/maven/falkoschumann/maven/actors/;publish=1</url>
+        </repository>
+    </distributionManagement>
 
     <profiles>
         <profile>
