@@ -74,7 +74,7 @@
         <plugins>
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>RELEASE</version>
+                <version>3.3</version>
                 <configuration>
                     <source>${java.source.level}</source>
                     <target>${java.source.level}</target>
@@ -82,7 +82,7 @@
             </plugin>
             <plugin>
                 <artifactId>maven-source-plugin</artifactId>
-                <version>RELEASE</version>
+                <version>3.0.0</version>
                 <executions>
                     <execution>
                         <goals>
@@ -93,7 +93,7 @@
             </plugin>
             <plugin>
                 <artifactId>maven-javadoc-plugin</artifactId>
-                <version>RELEASE</version>
+                <version>2.10.3</version>
                 <executions>
                     <execution>
                         <goals>
