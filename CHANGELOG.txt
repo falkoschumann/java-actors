@@ -1,0 +1,10 @@
+Changelog for Actors
+====================
+
+Version v1.0.0
+--------------
+
+*   Add `Actor`
+*   Add `JavaFxActor`
+*   Add `SwingActor`
+*   Add `SwtActor`

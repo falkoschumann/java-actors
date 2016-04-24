@@ -1,7 +1,17 @@
+/*
+ * Copyright (c) 2016 Falko Schumann <www.muspellheim.de>
+ * Released under the terms of the MIT License.
+ */
+
 package de.muspellheim.actors;
 
 import javax.swing.*;
 
+/**
+ * This actor process all messages in the Swing UI thread.
+ *
+ * @author Falko Schumann &lt;falko.schumann@muspellheim.de&gt;
+ */
 public abstract class SwingActor extends Actor {
 
     @Override
