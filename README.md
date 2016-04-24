@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/falkoschumann/java-actors.svg?branch=develop)](https://travis-ci.org/falkoschumann/java-actors)
+[![Build Status](https://travis-ci.org/falkoschumann/java-actors.svg?branch=master)](https://travis-ci.org/falkoschumann/java-actors)
 [![Build Status](https://api.bintray.com/packages/falkoschumann/maven/actors/images/download.svg)](https://bintray.com/falkoschumann/maven/actors)
 
 Actors
