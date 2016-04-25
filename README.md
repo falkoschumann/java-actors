@@ -13,7 +13,7 @@ In the actor model, communication between objects uses only messages. Every
 object, also known as actor, has an inbox queue for messages received. This
 queue is worked asynchronously in a thread owned by the actor.
 
-Read more on [Wikipedia](https://en.wikipedia.org/wiki/Actor_model).
+Read more on [Wikipedia][1].
 
 
 Usage
@@ -88,3 +88,20 @@ Actors are connected each other by connecting the outbox with the inbox
 `receive` method.
 
     actor1.outbox.addHandler(m -> actor2.receive(m));
+
+The most UI frameworks are not synchronized and all interaction with widgets
+must be processed in UI thread. The classes `JavaFxActor`, `SwingActor` and
+`SwtActor` process all messagess in the UI thread of the framework. An UI actor
+wrap an controller class and delegate all request. There are no AWT actor,
+because AWT is synchronized.
+
+A complete application example you can found in test source in package
+`de.muspellheim.actors.example`. It based on this [Blog][2] and include three
+main classes.
+
+*   `JavaFxProgramm`
+*   `SwingProgramm`
+*   `SwtProgramm`
+
+[1]: https://en.wikipedia.org/wiki/Actor_model
+[2]: http://geekswithblogs.net/theArchitectsNapkin/archive/2015/05/12/actors-in-a-ioda-architecture-by-example.aspx
