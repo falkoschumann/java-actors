@@ -1,6 +1,6 @@
 /*
- * Copyright (c) 2016 Falko Schumann <www.muspellheim.de>
- * Released under the terms of the MIT License.
+ * Copyright (c) 2016 Falko Schumann
+ * Released under the terms of the MIT License (MIT).
  */
 
 package de.muspellheim.actors.example.actors.messages;

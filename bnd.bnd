@@ -1,0 +1,5 @@
+-exportcontents: de.muspellheim.actors.*
+-sources: true
+
+Bundle-Name: Actors
+Bundle-SymbolicName: de.muspellheim.actors
