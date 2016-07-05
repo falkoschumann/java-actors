@@ -7,6 +7,7 @@ Actors
 
 A simple actor model implementation.
 
+
 Introduction
 ------------
 
@@ -103,6 +104,7 @@ main classes.
 *   `JavaFxProgramm`
 *   `SwingProgramm`
 *   `SwtProgramm`
+
 
 [1]: https://en.wikipedia.org/wiki/Actor_model
 [2]: http://geekswithblogs.net/theArchitectsNapkin/archive/2015/05/12/actors-in-a-ioda-architecture-by-example.aspx
