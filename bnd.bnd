@@ -3,3 +3,8 @@
 
 Bundle-Name: Actors
 Bundle-SymbolicName: de.muspellheim.actors
+Import-Package: \
+    javafx.*;resolution:=optional, \
+    javax.swing.*;resolution:=optional, \
+    org.eclipse.*;resolution:=optional, \
+    *
