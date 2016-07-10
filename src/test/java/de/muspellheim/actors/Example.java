@@ -22,7 +22,7 @@ public class Example {
         actor1.outbox.addHandler(m -> actor2.receive(m));
     }
 
-    public class MyActor extends Actor {
+    public static class MyActor extends Actor {
 
         private MyObject delegate;
 
@@ -52,7 +52,7 @@ public class Example {
 
     }
 
-    public class MyObject {
+    public static class MyObject {
 
         public final Event<Integer> anEvent = new Event<>();
 
@@ -66,19 +66,19 @@ public class Example {
 
     }
 
-    public class Message1 {
+    public static class Message1 {
 
         public String value;
 
     }
 
-    public class Message2 {
+    public static class Message2 {
 
         public int value;
 
     }
 
-    public class AnOtherMessage {
+    public static class AnOtherMessage {
 
         public int value;
 
