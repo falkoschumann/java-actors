@@ -34,7 +34,7 @@
 
     <scm>
         <connection>scm:git:https://github.com/${github.username}/${project.artifactId}.git</connection>
-        <developerConnection>${scm.connection}</developerConnection>
+        <developerConnection>${project.scm.connection}</developerConnection>
         <url>http://github.com/${github.username}/${project.artifactId}</url>
     </scm>
 
