@@ -25,11 +25,14 @@ public abstract class Actor {
 
     private final BlockingQueue<Object> inbox = new LinkedBlockingQueue<>();
 
-    Actor() {
+    /**
+     * Creates an actor without worker thread.
+     */
+    public Actor() {
     }
 
     /**
-     * Creates an actor.
+     * Creates an actor with worker thread.
      *
      * @param threadName the name of the actors worker thread.
      */
