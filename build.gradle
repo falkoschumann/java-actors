@@ -71,6 +71,10 @@ uploadArchives {
     }
 }
 
+findbugs {
+    excludeFilter = file("$rootProject.projectDir/config/findbugs/excludeFilter.xml")
+}
+
 task distZip(type: Zip) {
     from 'src/dist'
     from jar.outputs.files
