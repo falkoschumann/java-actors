@@ -24,7 +24,15 @@ repositories {
 
 dependencies {
     compile 'de.muspellheim:events:1.1.0'
-    testImplementation 'junit:junit:4.12'
+    compileOnly(
+            'org.eclipse:swt:3.3.0-v3346',
+            'org.eclipse.swt:org.eclipse.swt.cocoa.macosx.x86_64:4.3'
+    )
+    testCompile(
+            'junit:junit:4.12',
+            'org.eclipse:jface:3.2.1-M20060908-1000',
+            'org.eclipse.swt:org.eclipse.swt.cocoa.macosx.x86_64:4.3'
+    )
 }
 
 jar {
