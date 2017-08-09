@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2016 Falko Schumann <www.muspellheim.de>
+ * Copyright (c) 2016 Falko Schumann
  * Released under the terms of the MIT License.
  */
 
@@ -25,11 +25,14 @@ public abstract class Actor {
 
     private final BlockingQueue<Object> inbox = new LinkedBlockingQueue<>();
 
-    Actor() {
+    /**
+     * Creates an actor without worker thread.
+     */
+    public Actor() {
     }
 
     /**
-     * Creates an actor.
+     * Creates an actor with worker thread.
      *
      * @param threadName the name of the actors worker thread.
      */

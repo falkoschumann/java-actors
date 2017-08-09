@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2016 Falko Schumann <www.muspellheim.de>
+ * Copyright (c) 2016 Falko Schumann
  * Released under the terms of the MIT License.
  */
 

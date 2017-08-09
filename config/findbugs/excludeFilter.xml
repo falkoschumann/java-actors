@@ -1,0 +1,15 @@
+<FindBugsFilter>
+    <Match>
+        <Class name="de.muspellheim.actors.Actor" />
+        <Bug pattern="SC_START_IN_CTOR" />
+    </Match>
+    <Match>
+        <Class name="de.muspellheim.actors.Actor" />
+        <Method name="receive"/>
+        <Bug pattern="RV_RETURN_VALUE_IGNORED_BAD_PRACTICE" />
+    </Match>
+    <Match>
+        <Class name="~de\.muspellheim\.actors\.Example.*" />
+        <Bug pattern="URF_UNREAD_PUBLIC_OR_PROTECTED_FIELD,UWF_UNWRITTEN_PUBLIC_OR_PROTECTED_FIELD" />
+    </Match>
+</FindBugsFilter>

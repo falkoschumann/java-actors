@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2016 Falko Schumann <www.muspellheim.de>
+ * Copyright (c) 2016 Falko Schumann
  * Released under the terms of the MIT License.
  */
 
@@ -14,7 +14,11 @@ import de.muspellheim.actors.example.portals.SwingAlarmclockDialog;
 import de.muspellheim.actors.example.providers.Alarmbell;
 import de.muspellheim.actors.example.providers.DefaultAlarmbell;
 
-public class SwingProgram {
+public final class SwingProgram {
+
+    private SwingProgram() {
+        // main class
+    }
 
     public static void main(String args[]) {
         Thread.setDefaultUncaughtExceptionHandler((t, e) -> e.printStackTrace());

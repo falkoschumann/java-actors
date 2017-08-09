@@ -1,19 +1,65 @@
 [![Build Status](https://travis-ci.org/falkoschumann/java-actors.svg?branch=master)](https://travis-ci.org/falkoschumann/java-actors)
-[![Build Status](https://api.bintray.com/packages/falkoschumann/maven/actors/images/download.svg)](https://bintray.com/falkoschumann/maven/actors)
+[![GitHub release](https://img.shields.io/github/release/falkoschumann/java-actors.svg)]()
+
 
 Actors
 ======
 
 A simple actor model implementation.
 
-Introduction
-------------
-
 In the actor model, communication between objects uses only messages. Every
 object, also known as actor, has an inbox queue for messages received. This
 queue is worked asynchronously in a thread owned by the actor.
 
 Read more on [Wikipedia][1].
+
+
+Installation
+------------
+
+### Gradle
+
+Add the the repository _jcenter_ to your `build.gradle`
+
+    repositories {
+        jcenter()
+    }
+
+and add the dependency
+
+    compile 'de.muspellheim:actors:1.1.0'
+
+
+### Maven
+
+Add the the repository _jcenter_ to your `pom.xml`
+    
+    <repositories>
+        <repository>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+            <id>central</id>
+            <name>bintray</name>
+            <url>http://jcenter.bintray.com</url>
+        </repository>
+    </repositories>
+
+and add the dependency
+
+    <dependencies>
+        <dependency>
+            <groupId>de.muspellheim</groupId>
+            <artifactId>actors</artifactId>
+            <version>1.1.0</version>
+        </dependency>
+    </dependencies>
+
+
+### Download
+
+You can download JARs with binary, source and JavaDoc from GitHub under
+https://github.com/falkoschumann/java-actors/releases.
 
 
 Usage
@@ -102,6 +148,23 @@ main classes.
 *   `JavaFxProgramm`
 *   `SwingProgramm`
 *   `SwtProgramm`
+
+
+Contributing
+------------
+
+### Publish artifacts to Bintray
+
+1.  Create file `gradle.properties` and set properties `bintrayUser` and
+    `bintrayApiKey`.
+2.  Run `./gradlew uploadArchives`.
+3.  Check uploaded files and publish.
+
+### Publish distribution to GitHub
+
+1.  Run `./gradle distZip`.
+2.  Upload created ZIP to GitHub releases.
+
 
 [1]: https://en.wikipedia.org/wiki/Actor_model
 [2]: http://geekswithblogs.net/theArchitectsNapkin/archive/2015/05/12/actors-in-a-ioda-architecture-by-example.aspx

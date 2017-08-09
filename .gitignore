@@ -1,4 +1,4 @@
-target/
-
-.idea/
-*.iml
+# Gradle
+build/
+.gradle
+gradle.properties
